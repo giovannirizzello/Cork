@@ -3542,6 +3542,16 @@
         }
       }
     },
+    "action.close-begin-migration" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quit Cork and begin migration"
+          }
+        }
+      }
+    },
     "action.copy" : {
       "localizations" : {
         "cs" : {
@@ -3961,6 +3971,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Migrate"
+          }
+        }
+      }
+    },
+    "action.migrate-manual" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Migrate Manually"
           }
         }
       }
@@ -12632,6 +12652,15 @@
         }
       }
     },
+    "brew install --cask cork" : {
+
+    },
+    "brew tap marsanne/cask" : {
+
+    },
+    "brew uninstall --cask cork && brew untap enigmaticdb/super-secret-tap" : {
+
+    },
     "brewfile.export.default-export-name-%@" : {
       "localizations" : {
         "cs" : {
@@ -17575,6 +17604,26 @@
         }
       }
     },
+    "migration.failed.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Migration failed"
+          }
+        }
+      }
+    },
+    "migration.finished.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Migration finished"
+          }
+        }
+      }
+    },
     "migration.label.private" : {
       "localizations" : {
         "en" : {
@@ -17591,6 +17640,76 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Public"
+          }
+        }
+      }
+    },
+    "migration.manual.description" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Below, you will find the process you'll need to go through to manually migrate Cork.\nAs Cork needs to be closed to begin the migration process, please copy the commands so you can use them while Cork is not active."
+          }
+        }
+      }
+    },
+    "migration.manual.step-0" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Close Cork"
+          }
+        }
+      }
+    },
+    "migration.manual.step-1" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uninstall Cork and remove the old tap:"
+          }
+        }
+      }
+    },
+    "migration.manual.step-2" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Add the new tap:"
+          }
+        }
+      }
+    },
+    "migration.manual.step-3" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reinstall Cork"
+          }
+        }
+      }
+    },
+    "migration.manual.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Migrating manually"
+          }
+        }
+      }
+    },
+    "migration.process.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Migrating…"
           }
         }
       }

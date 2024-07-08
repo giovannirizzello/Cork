@@ -372,7 +372,7 @@ struct ContentView: View, Sendable
         {
             BrewfileImportProgressView()
         }
-        .sheet(isPresented: .constant(true))
+        .sheet(isPresented: $appState.isShowingMigrationSheet)
         {
             CorkTapMigrationView()
                 .interactiveDismissDisabled()

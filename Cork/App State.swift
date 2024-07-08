@@ -69,6 +69,9 @@ class AppState: ObservableObject
     
     @Published var corruptedPackage: String = ""
     
+    // MARK: - Temp Stuff
+    @Published var isShowingMigrationSheet: Bool = false
+    
     // MARK: - Showing errors
     func showAlert(errorToShow: DisplayableAlert)
     {

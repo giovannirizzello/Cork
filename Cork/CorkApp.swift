@@ -165,9 +165,9 @@ struct CorkApp: App
                             do
                             {
                                 let temporaryOutdatedPackageTracker: OutdatedPackageTracker = .init()
-                                
+
                                 try await temporaryOutdatedPackageTracker.getOutdatedPackages(brewData: brewData)
-                                
+
                                 var newOutdatedPackages = temporaryOutdatedPackageTracker.outdatedPackages
 
                                 AppConstants.logger.debug("Outdated packages checker output: \(newOutdatedPackages, privacy: .public)")
@@ -211,6 +211,19 @@ struct CorkApp: App
                         }
 
                         completion(NSBackgroundActivityScheduler.Result.finished)
+                    }
+                }
+                .onChange(of: availableTaps.addedTaps)
+                { newValue in
+                    if newValue.contains(where: { $0.name == "enigmaticdb/super-secret-tap" })
+                    {
+                        AppConstants.logger.debug("Old tap is added - Will show migration")
+                        
+                        appDelegate.appState.isShowingMigrationSheet = true
+                    }
+                    else
+                    {
+                        AppConstants.logger.debug("Old tap is not added - No migration needed")
                     }
                 }
                 .onChange(of: demoActivatedAt) // React to when the user activates the demo

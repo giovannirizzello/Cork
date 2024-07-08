@@ -9,77 +9,27 @@ import SwiftUI
 
 struct CorkTapMigrationView: View
 {
+    @StateObject var migrationTracker: MigrationTracker = .init()
+
     var body: some View
     {
-        VStack(alignment: .center, spacing: 15)
+        VStack
         {
-            Image(systemName: "music.note.house")
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .frame(width: 100)
-            
-            Text("migration.title")
-                .font(.title)
-
-            Text("migration.body")
-                .multilineTextAlignment(.center)
-
-            HStack(alignment: .lastTextBaseline)
+            switch migrationTracker.migrationStage
             {
-                GroupBox
-                {
-                    Text("enigmaticdb/super-secret-tap")
-                } label: {
-                    Text("migration.label.private")
-                }
-
-                Image(systemName: "arrow.forward")
-
-                GroupBox
-                {
-                    Text("marsanne/cask")
-                } label: {
-                    Text("migration.label.public")
-                }
+                case .initial:
+                    MigrationInitialView()
+                case .migrating:
+                    MigrationMigratingView()
+                case .migratingManually:
+                    MigrationMigrateManuallyView()
+                case .migrated:
+                    MigrationFinishedView()
+                case .failed:
+                    MigrationFailedView()
             }
-            
-            /*
-            DisclosureGroup
-            {
-                DisclosureGroup
-                {
-                    Text("migration.faq.1.text")
-                } label: {
-                    Text("migration.faq.1.label")
-                }
-                
-                DisclosureGroup
-                {
-                    Text("migration.faq.2.text")
-                } label: {
-                    Text("migration.faq.2.label")
-                }
-            } label: {
-                Text("generic.faq")
-            }
-             */
-             
-            Button
-            {
-                AppConstants.logger.debug("Migration button pressed")
-            } label: {
-                Text("action.migrate")
-            }
-            .modify
-            { viewProxy in
-                if #available(macOS 14.0, *)
-                {
-                    viewProxy
-                        .controlSize(.extraLarge)
-                }
-            }
-            .keyboardShortcut(.defaultAction)
         }
         .padding()
+        .environmentObject(migrationTracker)
     }
 }
