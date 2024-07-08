@@ -372,6 +372,11 @@ struct ContentView: View, Sendable
         {
             BrewfileImportProgressView()
         }
+        .sheet(isPresented: .constant(true))
+        {
+            CorkTapMigrationView()
+                .interactiveDismissDisabled()
+        }
         .alert(isPresented: $appState.isShowingFatalError, error: appState.fatalAlertType)
         { error in
             switch error

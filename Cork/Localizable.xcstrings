@@ -3955,6 +3955,16 @@
         }
       }
     },
+    "action.migrate" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Migrate"
+          }
+        }
+      }
+    },
     "action.open-terminal" : {
       "localizations" : {
         "cs" : {
@@ -13046,6 +13056,9 @@
         }
       }
     },
+    "enigmaticdb/super-secret-tap" : {
+
+    },
     "generic.false" : {
       "localizations" : {
         "cs" : {
@@ -13100,6 +13113,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "否"
+          }
+        }
+      }
+    },
+    "generic.faq" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "FAQ"
           }
         }
       }
@@ -17280,6 +17304,9 @@
         }
       }
     },
+    "marsanne/cask" : {
+
+    },
     "menu-bar.state-overview-%lld-%lld-%lld" : {
       "comment" : "Abbreviatons of `Formula`, `Cask`, `Tap`, in that order",
       "localizations" : {
@@ -17534,6 +17561,46 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "%@\n請重試或重啟 Cork"
+          }
+        }
+      }
+    },
+    "migration.body" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "To make Cork more accessible and convenient to install, we have moved it to a new tap.\nPlease migrate to this new tap so you can keep receiving updates."
+          }
+        }
+      }
+    },
+    "migration.label.private" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Private"
+          }
+        }
+      }
+    },
+    "migration.label.public" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Public"
+          }
+        }
+      }
+    },
+    "migration.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cork has a new home!"
           }
         }
       }
