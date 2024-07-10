@@ -17594,6 +17594,15 @@
         }
       }
     },
+    "migration.adding-new-tap" : {
+
+    },
+    "migration.adding-new-tap.failed" : {
+
+    },
+    "migration.adding-new-tap.passed" : {
+
+    },
     "migration.body" : {
       "localizations" : {
         "en" : {
@@ -17603,6 +17612,15 @@
           }
         }
       }
+    },
+    "migration.checking-prerequisites" : {
+
+    },
+    "migration.checking-prerequisites.internet-check-failed" : {
+
+    },
+    "migration.checking-prerequisites.internet-check-passed" : {
+
     },
     "migration.failed.title" : {
       "localizations" : {
