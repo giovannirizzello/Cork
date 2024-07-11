@@ -21,6 +21,7 @@ struct CorkTapMigrationView: View
                     MigrationInitialView()
                 case .migrating:
                     MigrationMigratingView()
+                        .fixedSize()
                 case .migratingManually:
                     MigrationMigrateManuallyView()
                 case .migrated:

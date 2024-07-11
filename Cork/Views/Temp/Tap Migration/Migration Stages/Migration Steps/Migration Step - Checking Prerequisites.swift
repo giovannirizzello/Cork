@@ -33,7 +33,7 @@ struct MigrationStep_CheckingPrerequisites: View
                             
                             migrationTracker.checkStatusOfTaps(tapTracker: tapTracker)
                             
-                            migrationTracker.migrationStep = .addingNewTap
+                            migrationTracker.migrationStep = .backingUp
                         }
                 }
                 else

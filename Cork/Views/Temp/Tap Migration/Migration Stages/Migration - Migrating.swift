@@ -23,6 +23,8 @@ struct MigrationMigratingView: View
         {
         case .checkingPrerequisites:
             MigrationStep_CheckingPrerequisites()
+        case .backingUp:
+            MigrationStep_BackingUp()
         case .addingNewTap:
             MigrationStep_AddingNewTap()
         case .installingCorkFromNewTap:
@@ -30,7 +32,7 @@ struct MigrationMigratingView: View
         case .uninstallingOldCork:
             EmptyView()
         case .removingOldTap:
-            EmptyView()
+            MigrationStep_RemovingOldTap()
         case .finished:
             EmptyView()
         }

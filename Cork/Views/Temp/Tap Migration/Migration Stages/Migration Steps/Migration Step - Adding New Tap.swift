@@ -45,6 +45,10 @@ struct MigrationStep_AddingNewTap: View
                 AppConstants.logger.info("Adding of new tap was successful")
 
                 hasSuccessfullyAddedNewTap = true
+                
+                migrationTracker.incrementProgress(by: .large)
+                
+                migrationTracker.migrationStep = .removingOldTap
             }
             else
             {
@@ -52,8 +56,7 @@ struct MigrationStep_AddingNewTap: View
 
                 hasFailedWhileAddingTap = true
             }
-
-            migrationTracker.incrementProgress(by: .large)
+            
         }
     }
 }

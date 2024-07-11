@@ -21,6 +21,7 @@ enum MigrationStage
 enum MigrationStep
 {
     case checkingPrerequisites
+    case backingUp
     case addingNewTap
     case installingCorkFromNewTap
     case uninstallingOldCork
@@ -46,6 +47,9 @@ class MigrationTracker: ObservableObject
     @Published var isOldTapAdded: Bool = false
     @Published var isNewTapAdded: Bool = false
 
+    // MARK: - Backup
+    @Published var backupURL: URL?
+    
     // MARK: - Migration Stages
 
     @Published var migrationStage: MigrationStage = .initial

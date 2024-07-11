@@ -3552,6 +3552,16 @@
         }
       }
     },
+    "action.continue" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Continue"
+          }
+        }
+      }
+    },
     "action.copy" : {
       "localizations" : {
         "cs" : {
@@ -12652,6 +12662,9 @@
         }
       }
     },
+    "brew bundle dump" : {
+
+    },
     "brew install --cask cork" : {
 
     },
@@ -13087,6 +13100,36 @@
     },
     "enigmaticdb/super-secret-tap" : {
 
+    },
+    "error.brewfile.export.could-not-determine-working-directory" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Could not determine working directory for creating backup"
+          }
+        }
+      }
+    },
+    "error.brewfile.export.could-not-read-brewfile" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Could not read Homebrew backup file"
+          }
+        }
+      }
+    },
+    "error.brewfile.export.other-error-%@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "An error occured during the backup: %@"
+          }
+        }
+      }
     },
     "generic.false" : {
       "localizations" : {
@@ -17594,14 +17637,136 @@
         }
       }
     },
+    "migration.action.back-up.manually" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Back up manually"
+          }
+        }
+      }
+    },
+    "migration.action.continue-without-backing-up" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Continue without a backup"
+          }
+        }
+      }
+    },
     "migration.adding-new-tap" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Adding new Cork tap…"
+          }
+        }
+      }
     },
     "migration.adding-new-tap.failed" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Couldn't add new tap"
+          }
+        }
+      }
     },
     "migration.adding-new-tap.passed" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "New tap successfully added"
+          }
+        }
+      }
+    },
+    "migration.backing-up.failure" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "There was an error backing up Homebrew:"
+          }
+        }
+      }
+    },
+    "migration.backing-up.failure-%@" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "There was an error while backing up Homebrew: %@"
+          }
+        }
+      }
+    },
+    "migration.backing-up.failure.next-steps" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You can cancel the migration, back Homebrew up manually, or continue without a Homebrew backup"
+          }
+        }
+      }
+    },
+    "migration.backing-up.manual.step.1" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "To back up manually, run this command in the Terminal:"
+          }
+        }
+      }
+    },
+    "migration.backing-up.manual.step.2" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Open the folder where the backup was created in Finder:"
+          }
+        }
+      }
+    },
+    "migration.backing-up.manual.step.3" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The backup will be named `Brewfile`"
+          }
+        }
+      }
+    },
+    "migration.backing-up.passed" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Homebrew backed up"
+          }
+        }
+      }
+    },
+    "migration.backing.up" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Backing up Homebrew…"
+          }
+        }
+      }
     },
     "migration.body" : {
       "localizations" : {
@@ -17614,13 +17779,34 @@
       }
     },
     "migration.checking-prerequisites" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Checking your system…"
+          }
+        }
+      }
     },
     "migration.checking-prerequisites.internet-check-failed" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Your internet is not stable enough to guarantee a successful migration.\nTry the migration again later."
+          }
+        }
+      }
     },
     "migration.checking-prerequisites.internet-check-passed" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Internet is stable enough"
+          }
+        }
+      }
     },
     "migration.failed.title" : {
       "localizations" : {
@@ -17628,6 +17814,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Migration failed"
+          }
+        }
+      }
+    },
+    "migration.finished.description" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You can now use Cork normally"
           }
         }
       }
@@ -17732,12 +17928,72 @@
         }
       }
     },
+    "migration.removing-old-tap" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Removing old Cork tap…"
+          }
+        }
+      }
+    },
+    "migration.removing-old-tap.failed" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Couldn't remove old tap"
+          }
+        }
+      }
+    },
+    "migration.removing-old-tap.passed" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Successfully removed olf Cork tap"
+          }
+        }
+      }
+    },
     "migration.title" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cork has a new home!"
+          }
+        }
+      }
+    },
+    "migration.uninstalling-old-cork" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uninstalling old Cork…"
+          }
+        }
+      }
+    },
+    "migration.uninstalling-old-cork.failed" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Couldn't uninstall old Cork"
+          }
+        }
+      }
+    },
+    "migration.uninstalling-old-cork.passed" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Successfully uninstalled old Cork"
           }
         }
       }
@@ -22021,6 +22277,9 @@
           }
         }
       }
+    },
+    "open ." : {
+
     },
     "package-details.action.pin-version-%@" : {
       "localizations" : {
