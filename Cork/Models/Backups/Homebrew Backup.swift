@@ -8,12 +8,23 @@
 import Foundation
 import SwiftUI
 
-struct HomebrewBackup: Transferable
+struct HomebrewBackup
+{
+    let file: URL
+}
+
+extension HomebrewBackup: Transferable
 {
     static var transferRepresentation: some TransferRepresentation
     {
-        return FileRepresentation(exportedContentType: .homebrewBackup) { homebrewBackup in
-            SentTransferredFile(homebrewBackup)
+        FileRepresentation(contentType: .homebrewBackup) { sentFile in
+            SentTransferredFile(sentFile.file)
+        } importing: { receivedFile in
+            let copy = receivedFile.file
+            
+            return Self.init(file: copy)
         }
+
+        ProxyRepresentation(exporting: \.file)
     }
 }

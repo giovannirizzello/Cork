@@ -28,7 +28,7 @@
 		<dict>
 			<key>UTTypeConformsTo</key>
 			<array>
-				<string>public.item</string>
+				<string>com.public.data</string>
 			</array>
 			<key>UTTypeDescription</key>
 			<string>Homebrew Backup</string>
