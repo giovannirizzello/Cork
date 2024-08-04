@@ -8,9 +8,10 @@
 import Foundation
 import AppKit
 import DavidFoundation
+import CoreTransferable
 
 /// A representation of a Homebrew package
-struct BrewPackage: Identifiable, Equatable, Hashable
+struct BrewPackage: Identifiable, Equatable, Hashable, Codable
 {
     var id = UUID()
     let name: String
@@ -127,5 +128,13 @@ extension FormatStyle where Self == Date.FormatStyle
     static var packageInstallationStyle: Self
     {
         Self.dateTime.day().month(.wide).year().weekday(.wide).hour().minute()
+    }
+}
+
+extension BrewPackage: Transferable
+{
+    static var transferRepresentation: some TransferRepresentation
+    {
+        CodableRepresentation(contentType: .folder)
     }
 }

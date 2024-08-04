@@ -74,5 +74,24 @@ struct PackageListItem: View
                 .animation(.interpolatingSpring(stiffness: 80, damping: 10), value: packageItem.isTagged)
             #endif
         }
+        .draggable(packageItem) 
+        {
+            packageDraggingPreview
+        }
+    }
+    
+    @ViewBuilder
+    var packageDraggingPreview: some View
+    {
+        HStack
+        {
+            Image(systemName: packageItem.type == .formula ? "terminal" : "macwindow")
+            
+            VStack(alignment: .leading)
+            {
+                Text(packageItem.name)
+                Text(packageItem.getFormattedVersions())
+            }
+        }
     }
 }
