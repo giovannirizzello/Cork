@@ -7,6 +7,22 @@
 
 import Foundation
 
+extension HomebrewBackup
+{
+    func exportHomebrewBackup() async throws -> Void
+    {
+        let brewfileUUID: UUID = .init()
+        
+        let brewfileParentLocation: URL = URL.temporaryDirectory
+        
+        AppConstants.logger.debug("Will use \(brewfileParentLocation) as temp parent directory for Homebrew backup")
+        
+        let brewfileDumpingResult: TerminalOutput = await shell(AppConstants.brewExecutablePath, ["bundle", "dump", "--file=\"\(brewfileParentLocation.appending(path: brewfileUUID.uuidString))\"", "--verbose", "--debug"], workingDirectory: URL.userDirectory)
+        
+        AppConstants.logger.debug("Output of brewfile dumping: \(brewfileDumpingResult.standardOutput), \(brewfileDumpingResult.standardError)")
+    }
+}
+
 enum BrewfileDumpingError: Error
 {
     case couldNotDetermineWorkingDirectory, errorWhileDumpingBrewfile(error: String), couldNotReadBrewfile

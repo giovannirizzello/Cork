@@ -41,6 +41,8 @@ struct CorkApp: App
 
     @State private var brewfileContents: String = .init()
     @State private var isShowingBrewfileExporter: Bool = false
+    
+    @State private var homebrewBackup: HomebrewBackup?
 
     @State private var isShowingBrewfileImporter: Bool = false
 
@@ -512,7 +514,9 @@ struct CorkApp: App
             {
                 do
                 {
-                    brewfileContents = try await exportBrewfile(appState: appDelegate.appState)
+                    try! await HomebrewBackup(file: URL.temporaryDirectory).exportHomebrewBackup()
+                    
+                    //brewfileContents = try await exportBrewfile(appState: appDelegate.appState)
 
                     isShowingBrewfileExporter = true
                 }
