@@ -5129,6 +5129,16 @@
         }
       }
     },
+    "action.update-%@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Update %@"
+          }
+        }
+      }
+    },
     "action.update-homebrew" : {
       "localizations" : {
         "cs" : {

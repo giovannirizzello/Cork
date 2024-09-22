@@ -19,6 +19,18 @@ struct SidebarPackageRow: View
     @EnvironmentObject var brewData: BrewDataStorage
     @EnvironmentObject var outdatedPackageTracker: OutdatedPackageTracker
 
+    var isPackageOutdated: Bool
+    {
+        if outdatedPackageTracker.displayableOutdatedPackages.contains(where: { $0.package.name == package.name })
+        {
+            return true
+        }
+        else
+        {
+            return false
+        }
+    }
+
     var body: some View
     {
         NavigationLink
@@ -51,6 +63,21 @@ struct SidebarPackageRow: View
             Text(package.isTagged ? "sidebar.section.all.contextmenu.untag-\(package.name)" : "sidebar.section.all.contextmenu.tag-\(package.name)")
         }
         Divider()
+
+        if isPackageOutdated
+        {
+            Button
+            {
+                // TODO: Implement logic for updating only one package
+                // The incremental update sheet only updates those packages in the outdated package tracker that have isMarkedForUpdating set to true
+
+                appState.isShowingIncrementalUpdateSheet = true
+            } label: {
+                Text("action.update-\(package.name)")
+            }
+
+            Divider()
+        }
 
         UninstallPackageButton(package: package, isCalledFromSidebar: true)
 
