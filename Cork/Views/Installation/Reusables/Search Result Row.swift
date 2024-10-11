@@ -15,7 +15,7 @@ struct SearchResultRow: View, Sendable
 
     @EnvironmentObject var brewData: BrewDataStorage
 
-    let searchedForPackage: BrewPackage
+    let searchResult: SearchResult
 
     @State private var description: String?
     @State private var isCompatible: Bool?
@@ -29,18 +29,18 @@ struct SearchResultRow: View, Sendable
         {
             HStack(alignment: .center)
             {
-                SanitizedPackageName(packageName: searchedForPackage.name, shouldShowVersion: true)
+                SanitizedPackageName(packageName: searchResult.packageName, shouldShowVersion: true)
 
-                if searchedForPackage.type == .formula
+                if searchResult.packageType == .formula
                 {
-                    if brewData.installedFormulae.contains(where: { $0.name == searchedForPackage.name })
+                    if brewData.installedFormulae.contains(where: { $0.name == searchResult.packageName })
                     {
                         PillTextWithLocalizableText(localizedText: "add-package.result.already-installed")
                     }
                 }
                 else
                 {
-                    if brewData.installedCasks.contains(where: { $0.name == searchedForPackage.name })
+                    if brewData.installedCasks.contains(where: { $0.name == searchResult.packageName })
                     {
                         PillTextWithLocalizableText(localizedText: "add-package.result.already-installed")
                     }
@@ -112,7 +112,7 @@ struct SearchResultRow: View, Sendable
 
                     do
                     {
-                        let searchedForPackage: BrewPackage = .init(name: searchedForPackage.name, type: searchedForPackage.type, installedOn: Date(), versions: [], sizeInBytes: nil)
+                        let searchedForPackage: BrewPackage = .init(name: searchResult.packageName, type: searchResult.packageType, installedOn: Date(), versions: [], sizeInBytes: nil)
 
                         do
                         {
