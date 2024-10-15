@@ -11,7 +11,7 @@ import CorkShared
 
 struct ReinstallCorruptedPackageView: View
 {
-    @EnvironmentObject var appState: AppState
+    @Environment(AppState.self) var appState: AppState
     @EnvironmentObject var brewData: BrewDataStorage
 
     let corruptedPackageToReinstall: CorruptedPackage

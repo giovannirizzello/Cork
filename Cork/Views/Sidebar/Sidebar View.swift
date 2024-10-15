@@ -11,7 +11,7 @@ struct SidebarView: View
 {
     @AppStorage("allowMoreCompleteUninstallations") var allowMoreCompleteUninstallations: Bool = false
 
-    @EnvironmentObject var appState: AppState
+    @Environment(AppState.self) var appState: AppState
 
     @State private var isShowingSearchField: Bool = false
     @State private var searchText: String = ""
@@ -34,6 +34,7 @@ struct SidebarView: View
 
     var body: some View
     {
+        @Bindable var appState: AppState = appState
         /// Navigation selection enables "Home" button behaviour. [2023.09]
         List(selection: $appState.navigationTarget)
         {

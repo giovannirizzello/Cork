@@ -10,7 +10,7 @@ import CorkShared
 
 struct TapsSection: View
 {
-    @EnvironmentObject var appState: AppState
+    @Environment(AppState.self) var appState: AppState
     @EnvironmentObject var availableTaps: AvailableTaps
 
     let searchText: String

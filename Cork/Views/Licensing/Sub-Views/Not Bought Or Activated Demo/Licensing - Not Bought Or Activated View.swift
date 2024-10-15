@@ -14,7 +14,7 @@ struct Licensing_NotBoughtOrActivatedView: View
 
     @Environment(\.dismiss) var dismiss: DismissAction
 
-    @EnvironmentObject var appState: AppState
+    @Environment(AppState.self) var appState: AppState
 
     @State private var emailFieldContents: String = ""
 

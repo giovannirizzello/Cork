@@ -15,7 +15,7 @@ enum MaintenanceSteps
 struct MaintenanceView: View
 {
     @EnvironmentObject var brewData: BrewDataStorage
-    @EnvironmentObject var appState: AppState
+    @Environment(AppState.self) var appState: AppState
 
     @State var maintenanceSteps: MaintenanceSteps = .ready
 

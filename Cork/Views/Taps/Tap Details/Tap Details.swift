@@ -12,7 +12,7 @@ struct TapDetailView: View, Sendable
 {
     let tap: BrewTap
 
-    @EnvironmentObject var appState: AppState
+    @Environment(AppState.self) var appState: AppState
     @EnvironmentObject var availableTaps: AvailableTaps
 
     @State private var isLoadingTapInfo: Bool = true

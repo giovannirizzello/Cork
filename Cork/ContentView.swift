@@ -28,7 +28,7 @@ struct ContentView: View, Sendable
 
     @Environment(\.openWindow) var openWindow: OpenWindowAction
 
-    @EnvironmentObject var appState: AppState
+    @Environment(AppState.self) var appState: AppState
 
     @EnvironmentObject var brewData: BrewDataStorage
     @EnvironmentObject var tapData: AvailableTaps
@@ -122,6 +122,7 @@ struct ContentView: View, Sendable
 
     var body: some View
     {
+        @Bindable var appState: AppState = appState
         VStack
         {
             NavigationSplitView(columnVisibility: $columnVisibility)

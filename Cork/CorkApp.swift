@@ -76,7 +76,7 @@ struct CorkApp: App
                     LicensingView()
                         .interactiveDismissDisabled()
                 })
-                .environmentObject(appDelegate.appState)
+                .environment(appDelegate.appState)
                 .environmentObject(brewData)
                 .environmentObject(availableTaps)
                 .environmentObject(updateProgressTracker)
@@ -414,7 +414,7 @@ struct CorkApp: App
         Settings
         {
             SettingsView()
-                .environmentObject(appDelegate.appState)
+                .environment(appDelegate.appState)
         }
 
         // MARK: - Menu Bar Extra
@@ -422,7 +422,7 @@ struct CorkApp: App
         MenuBarExtra("app-name", systemImage: outdatedPackageTracker.displayableOutdatedPackages.isEmpty ? "mug" : "mug.fill", isInserted: $showInMenuBar)
         {
             MenuBarItem()
-                .environmentObject(appDelegate.appState)
+                .environment(appDelegate.appState)
                 .environmentObject(brewData)
                 .environmentObject(availableTaps)
                 .environmentObject(outdatedPackageTracker)

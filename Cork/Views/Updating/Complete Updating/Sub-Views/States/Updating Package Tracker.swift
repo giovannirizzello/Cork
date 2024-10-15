@@ -10,7 +10,7 @@ import CorkShared
 
 struct UpdatingPackageTrackerStateView: View
 {
-    @EnvironmentObject var appState: AppState
+    @Environment(AppState.self) var appState: AppState
     @EnvironmentObject var outdatedPackageTracker: OutdatedPackageTracker
     @EnvironmentObject var updateProgressTracker: UpdateProgressTracker
     @EnvironmentObject var brewData: BrewDataStorage

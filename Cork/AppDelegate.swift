@@ -16,7 +16,9 @@ class AppDelegate: NSObject, NSApplicationDelegate, ObservableObject
     @AppStorage("showInMenuBar") var showInMenuBar: Bool = false
     @AppStorage("startWithoutWindow") var startWithoutWindow: Bool = false
 
-    @MainActor let appState: AppState = .init()
+    @MainActor lazy var appState: AppState = {
+        return .init()
+    }()
 
     func applicationWillFinishLaunching(_: Notification)
     {

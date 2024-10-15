@@ -12,70 +12,70 @@ import CorkShared
 import CorkNotifications
 
 /// Class that holds the global state of the app, excluding services
-@MainActor
-class AppState: ObservableObject
+@Observable @MainActor
+final class AppState
 {
     // MARK: - Licensing
 
-    @Published var licensingState: LicensingState = .notBoughtOrHasNotActivatedDemo
-    @Published var isShowingLicensingSheet: Bool = false
+    var licensingState: LicensingState = .notBoughtOrHasNotActivatedDemo
+    var isShowingLicensingSheet: Bool = false
 
     // MARK: - Navigation
 
-    @Published var navigationTarget: NavigationTargetMainWindow?
+    var navigationTarget: NavigationTargetMainWindow?
 
     // MARK: - Notifications
 
-    @Published var notificationEnabledInSystemSettings: Bool?
-    @Published var notificationAuthStatus: UNAuthorizationStatus = .notDetermined
+    var notificationEnabledInSystemSettings: Bool?
+    var notificationAuthStatus: UNAuthorizationStatus = .notDetermined
 
     // MARK: - Stuff for controlling various sheets from the menu bar
 
-    @Published var isShowingInstallationSheet: Bool = false
-    @Published var isShowingPackageReinstallationSheet: Bool = false
-    @Published var isShowingUninstallationSheet: Bool = false
-    @Published var isShowingMaintenanceSheet: Bool = false
-    @Published var isShowingFastCacheDeletionMaintenanceView: Bool = false
-    @Published var isShowingAddTapSheet: Bool = false
-    @Published var isShowingUpdateSheet: Bool = false
+    var isShowingInstallationSheet: Bool = false
+    var isShowingPackageReinstallationSheet: Bool = false
+    var isShowingUninstallationSheet: Bool = false
+    var isShowingMaintenanceSheet: Bool = false
+    var isShowingFastCacheDeletionMaintenanceView: Bool = false
+    var isShowingAddTapSheet: Bool = false
+    var isShowingUpdateSheet: Bool = false
 
     // MARK: - Stuff for controlling the UI in general
 
-    @Published var isSearchFieldFocused: Bool = false
+    var isSearchFieldFocused: Bool = false
 
     // MARK: - Brewfile importing and exporting
 
-    @Published var isShowingBrewfileExportProgress: Bool = false
-    @Published var isShowingBrewfileImportProgress: Bool = false
-    @Published var brewfileImportingStage: BrewfileImportStage = .importing
+    var isShowingBrewfileExportProgress: Bool = false
+    var isShowingBrewfileImportProgress: Bool = false
+    var brewfileImportingStage: BrewfileImportStage = .importing
 
-    @Published var isCheckingForPackageUpdates: Bool = true
+    var isCheckingForPackageUpdates: Bool = true
 
-    @Published var isShowingUninstallationProgressView: Bool = false
-    @Published var isShowingFatalError: Bool = false
-    @Published var fatalAlertType: DisplayableAlert? = nil
+    var isShowingUninstallationProgressView: Bool = false
+    var isShowingFatalError: Bool = false
+    var fatalAlertType: DisplayableAlert? = nil
 
-    @Published var isShowingSudoRequiredForUninstallSheet: Bool = false
-    @Published var packageTryingToBeUninstalledWithSudo: BrewPackage?
+    var isShowingSudoRequiredForUninstallSheet: Bool = false
+    var packageTryingToBeUninstalledWithSudo: BrewPackage?
 
-    @Published var isShowingRemoveTapFailedAlert: Bool = false
+    var isShowingRemoveTapFailedAlert: Bool = false
 
-    @Published var isShowingIncrementalUpdateSheet: Bool = false
+    var isShowingIncrementalUpdateSheet: Bool = false
 
-    @Published var isLoadingFormulae: Bool = true
-    @Published var isLoadingCasks: Bool = true
+    var isLoadingFormulae: Bool = true
+    var isLoadingCasks: Bool = true
 
-    @Published var isLoadingTopPackages: Bool = false
-    @Published var failedWhileLoadingTopPackages: Bool = false
+    var isLoadingTopPackages: Bool = false
+    var failedWhileLoadingTopPackages: Bool = false
 
-    @Published var cachedDownloadsFolderSize: Int64 = AppConstants.brewCachedDownloadsPath.directorySize
-    @Published var cachedDownloads: [CachedDownload] = .init()
+    var cachedDownloadsFolderSize: Int64 = AppConstants.brewCachedDownloadsPath.directorySize
+    var cachedDownloads: [CachedDownload] = .init()
 
     private var cachedDownloadsTemp: [CachedDownload] = .init()
 
-    @Published var taggedPackageNames: Set<String> = .init()
+    var taggedPackageNames: Set<String> = .init()
 
-    @Published var corruptedPackage: String = ""
+    var corruptedPackage: String = ""
 
     // MARK: - Showing errors
 
@@ -154,6 +154,7 @@ class AppState: ObservableObject
         sendNotification(title: String(localized: "notification.upgrade-process-started"))
     }
 
+    @MainActor
     func loadCachedDownloadedPackages() async
     {
         let smallestDispalyableSize: Int = .init(cachedDownloadsFolderSize / 50)
@@ -229,6 +230,7 @@ private extension UNUserNotificationCenter
 
 extension AppState
 {
+    @MainActor
     func assignPackageTypeToCachedDownloads(brewData: BrewDataStorage)
     {
         var cachedDownloadsTracker: [CachedDownload] = .init()
