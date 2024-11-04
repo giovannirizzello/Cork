@@ -101,7 +101,7 @@ struct SearchResultRow: View, Sendable
         {
             if showDescriptionsInSearchResults && !descriptionLoadingForciblyDisabled
             {
-                AppConstants.shared.logger.info("\(searchedForPackage.name, privacy: .auto) came into view")
+                AppConstants.shared.logger.info("\(searchResult.packageName, privacy: .auto) came into view")
 
                 if description == nil
                 {
@@ -110,7 +110,7 @@ struct SearchResultRow: View, Sendable
                         isLoadingDescription = false
                     }
 
-                    AppConstants.shared.logger.info("\(searchedForPackage.name, privacy: .auto) does not have its description loaded")
+                    AppConstants.shared.logger.info("\(searchResult.packageName, privacy: .auto) does not have its description loaded")
 
                     do
                     {
@@ -134,7 +134,7 @@ struct SearchResultRow: View, Sendable
                 }
                 else
                 {
-                    AppConstants.shared.logger.info("\(searchedForPackage.name, privacy: .auto) already has its description loaded")
+                    AppConstants.shared.logger.info("\(searchResult.packageName, privacy: .auto) already has its description loaded")
                 }
             }
         }

@@ -67,7 +67,7 @@ struct PresentingSearchResultsView: View
 
                         openWindow(value: requestedPackageToPreview)
 
-                        AppConstants.shared.logger.debug("Would preview package \(requestedPackageToPreview.name)")
+                        AppConstants.shared.logger.debug("Would preview package \(requestedPackageToPreview.packageName)")
                     }
                     catch {}
                 }

@@ -8,14 +8,13 @@
 import Foundation
 import CorkShared
 
-
 /// Search for a package by specified name
 /// - Parameter packageName: Name of the package to look up
 /// - Returns: Tuple of two ``[SearchResult]``s, first being the found formulae, second the found casks
 func searchForPackage(packageName: String) async -> (formulae: [SearchResult], casks: [SearchResult])
 {
-    async let formulaSearchResults: TerminalOutput = await shell(AppConstants.brewExecutablePath, ["search", "--formulae", packageName])
-    async let caskSearchResults: TerminalOutput = await shell(AppConstants.brewExecutablePath, ["search", "--casks", packageName])
+    async let formulaSearchResults: TerminalOutput = await shell(AppConstants.shared.brewExecutablePath, ["search", "--formulae", packageName])
+    async let caskSearchResults: TerminalOutput = await shell(AppConstants.shared.brewExecutablePath, ["search", "--casks", packageName])
     
     let foundFormulaNames: [String] = await formulaSearchResults.standardOutput.components(separatedBy: "\n")
     let foundCaskNames: [String] = await caskSearchResults.standardOutput.components(separatedBy: "\n")
